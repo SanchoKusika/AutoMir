@@ -1,0 +1,59 @@
+.cards {
+	&__title {
+		font-size: 28px;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 20px;
+	}
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: relative;
+	width: 370px;
+	padding: 10px;
+	border-radius: 20px;
+
+	background-color: #e3e3e3;
+
+	&__img {
+		border-radius: 20px;
+		overflow: hidden;
+		img {
+			background-color: #e3e3e3;
+		}
+	}
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__title {
+		font-size: 25px;
+		font-weight: 500;
+	}
+	&__model {
+		color: #6a6a6a;
+	}
+	&__price {
+		font-size: 22px;
+	}
+}
+.form-link {
+	display: inline-block;
+	padding: 10px 40px;
+	background-color: #000;
+	text-align: center;
+	color: #fff !important;
+	transition: all 0.2s ease-in;
+	border-radius: 20px;
+
+	&:hover {
+		background-color: #000000d8;
+	}
+}

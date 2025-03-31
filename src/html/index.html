@@ -14,8 +14,43 @@
 
 <body>
 	@@include('blocks/header.html')
-	<main>
+	<main class="main">
+		<div class="container">
+			<h1 class="main__slogan">Найдите машину своей мечты</h1>
 
+			<div class="cards">
+				<h2 class="cards__title">Выберите машину и подайте заявку на неё</h2>
+				<div class="cards__wrapper">
+					<div class="card">
+						<img src="./../img/cars/bmw.jpg" alt="BMW" class="card__img">
+						<div class="card__desc">
+							<h2 class="card__title">2021 X1</h2>
+							<h3 class="card__model">BMW</h3>
+							<h2 class="card__price"> &#36;54.000</h2>
+						</div>
+						<a href="#!" class="form-link">Подать заявку</a>
+					</div>
+					<div class="card">
+						<img src="./../img/cars/nissan.jpg" alt="NISSAN" class="card__img">
+						<div class="card__desc">
+							<h2 class="card__title">2023 Ariya</h2>
+							<h3 class="card__model">NISSAN</h3>
+							<h2 class="card__price"> &#36;44.500</h2>
+						</div>
+						<a href="#!" class="form-link">Подать заявку</a>
+					</div>
+					<div class="card">
+						<img src="./../img/cars/toyota.jpg" alt="TOYOTA" class="card__img">
+						<div class="card__desc">
+							<h2 class="card__title">2022 Corolla</h2>
+							<h3 class="card__model">TOYOTA</h3>
+							<h2 class="card__price"> &#36;26.000</h2>
+						</div>
+						<a href="#!" class="form-link">Подать заявку</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 	@@include('blocks/footer.html')
 	<script src="./js/index.bundle.js"></script>
