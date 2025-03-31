@@ -1,0 +1,14 @@
+.status-available, .status-unavailable {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border-radius: 20px;
+	padding: 5px 30px;
+}
+.status-unavailable {
+	background-color: #f96a6a;
+}
+
+.status-available {
+	background-color: #11ac00;
+}
