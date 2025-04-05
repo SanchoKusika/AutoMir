@@ -5,7 +5,7 @@
 		</h2>
 	</div>
 </footer>
-<script src="./js/index.bundle.js"></script>
+<script src="<?= HOST ?>assets/js/index.bundle.js"></script>
 </body>
 
 </html>
