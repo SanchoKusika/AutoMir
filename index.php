@@ -13,42 +13,30 @@ include(ROOT . "templates/header.tpl");
 		<div class="cards">
 			<h2 class="cards__title">Выберите машину и&#160;подайте заявку на&#160;неё</h2>
 			<div class="cards__wrapper">
+
+			<?php
+			$cars = R::findAll('cars');
+
+			foreach ($cars as $car):
+				$imagePath = HOST . 'assets/img/cars/' . strtolower($car->brand) . '.jpg';
+				$isSold = ($car->quantity <= 0);
+			?>
 				<div class="card">
-					<img src="<?= HOST ?>assets/img/cars/bmw.jpg" alt="BMW" class="card__img" />
+					<img src="<?= $imagePath ?>" alt="<?= $car->brand ?>" class="card__img" />
 					<div class="card__desc">
-						<h2 class="card__title">X1</h2>
-						<h3 class="card__model">BMW</h3>
-						<h3 class="card__year">2021</h3>
-						<h2 class="card__price">$54.000</h2>
+						<h2 class="card__title"><?= $car->model ?></h2>
+						<h3 class="card__model"><?= $car->brand ?></h3>
+						<h3 class="card__year"><?= $car->year ?></h3>
+					<h2 class="card__price">$<?= number_format($car->price, 0, '.', ',') ?></h2>
 					</div>
-					<a href="#order-form" class="form-link">Оформить заявку</a>
-					<h2 class="status-available" hidden>Доступен</h2>
-					<h2 class="status-unavailable" hidden>Продан</h2>
+					<?php if (!$isSold): ?>
+						<a href="#order-form" class="form-link">Оформить заявку</a>
+					<?php endif; ?>
+					<h2 class="status-available" <?= $isSold ? 'hidden' : '' ?>>Доступен</h2>
+					<h2 class="status-unavailable" <?= !$isSold ? 'hidden' : '' ?>>Продан</h2>
 				</div>
-				<div class="card">
-					<img src="<?= HOST ?>assets/img/cars/nissan.jpg" alt="NISSAN" class="card__img" />
-					<div class="card__desc">
-						<h2 class="card__title">Ariya</h2>
-						<h3 class="card__model">NISSAN</h3>
-						<h3 class="card__year">2023</h3>
-						<h2 class="card__price">$44.500</h2>
-					</div>
-					<a href="#order-form" class="form-link">Оформить заявку</a>
-					<h2 class="status-available" hidden>Доступен</h2>
-					<h2 class="status-unavailable" hidden>Продан</h2>
-				</div>
-				<div class="card">
-					<img src="<?= HOST ?>assets/img/cars/toyota.jpg" alt="TOYOTA" class="card__img" />
-					<div class="card__desc">
-						<h2 class="card__title">Corolla</h2>
-						<h3 class="card__model">TOYOTA</h3>
-						<h3 class="card__year">2022</h3>
-						<h2 class="card__price">$26.000</h2>
-					</div>
-					<a href="#order-form" class="form-link">Оформить заявку</a>
-					<h2 class="status-available" hidden>Доступен</h2>
-					<h2 class="status-unavailable" hidden>Продан</h2>
-				</div>
+			<?php endforeach; ?>
+
 			</div>
 		</div>
 	</div>
