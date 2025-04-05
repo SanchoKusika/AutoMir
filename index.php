@@ -1,5 +1,6 @@
 <?php
 require("config.php");
+require("db.php");
 
 include(ROOT . "templates/head.tpl");
 include(ROOT . "templates/header.tpl");

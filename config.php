@@ -2,7 +2,7 @@
 
 // DB SETTINGS
 define('DB_HOST', 'database');
-define('DB_NAME', 'microblog');
+define('DB_NAME', 'automir');
 define('DB_USER', 'root');
 define('DB_PASS', 'tiger');
 
