@@ -42,38 +42,36 @@ include(ROOT . "templates/header.tpl");
 	</div>
 
 	<section class="order-section" id="order-form">
-		<div class="container">
-			<h2 class="order-section__title">Оформить заявку</h2>
-			<form class="order-form" id="globalOrderForm">
-				<!-- Выбор автомобиля -->
-				<div class="form-group">
-					<label for="carSelect">Выберите автомобиль:</label>
-					<select id="carSelect" class="form-select" required>
-						<option value="" disabled selected>Выберите модель</option>
-						<!-- Опции будут заполнены через JS -->
-					</select>
-				</div>
+	    <div class="container">
+	        <h2 class="order-section__title">Оформить заявку</h2>
+	        <form class="order-form" id="globalOrderForm" action="order.php" method="POST">
+	            <div class="form-group">
+	                <label for="carSelect">Выберите автомобиль:</label>
+	                <select id="carSelect" name="car_id" class="form-select" required>
+	                    <option value="" disabled selected>Выберите модель</option>
+	                </select>
+	            </div>
 
-				<!-- Данные клиента -->
-				<div class="form-group">
-					<label for="clientName">ФИО:</label>
-					<input type="text" id="clientName" placeholder="Иванов Иван" required />
-				</div>
+	            <div class="form-group">
+	                <label for="clientName">ФИО:</label>
+	                <input type="text" id="clientName" name="name" placeholder="Иванов Иван" required />
+	            </div>
 
-				<div class="form-group">
-					<label for="clientPhone">Телефон:</label>
-					<input type="tel" id="clientPhone" placeholder="+7 (999) 123-45-67" required />
-				</div>
+	            <div class="form-group">
+	                <label for="clientPhone">Телефон:</label>
+	                <input type="tel" id="clientPhone" name="phone" placeholder="+7 (999) 123-45-67" required />
+	            </div>
 
-				<div class="form-group">
-					<label for="clientEmail">Email:</label>
-					<input type="email" id="clientEmail" placeholder="example@mail.com" />
-				</div>
+	            <div class="form-group">
+	                <label for="clientEmail">Email:</label>
+	                <input type="email" id="clientEmail" name="email" placeholder="example@mail.com" />
+	            </div>
 
-				<button type="submit" class="form-link">Отправить заявку</button>
-			</form>
-		</div>
+	            <button type="submit" class="form-link">Отправить заявку</button>
+	        </form>
+	    </div>
 	</section>
+
 </main>
 
 <?php
