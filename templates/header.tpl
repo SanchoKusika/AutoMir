@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="container">
 		<div class="header__row">
-			<div class="logo">АвтоМир</div>
+			<div class="logo"><a href="<?= HOST ?>index.php">АвтоМир</a></div>
 			<nav class="header__nav">
 				<ul class="header__nav-list">
 					<li><a href="#!">Католог</a></li>
