@@ -2,34 +2,6 @@
 	require("config.php")
 ?>
 
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>АвтоМир</title>
-		<link rel="stylesheet" href="./css/main.css" />
-
-		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
-		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
-	</head>
-
-	<body>
-		<header class="header">
-			<div class="container">
-				<div class="header__row">
-					<div class="logo">АвтоМир</div>
-					<nav class="header__nav">
-						<ul class="header__nav-list">
-							<li><a href="#!">Католог</a></li>
-							<li><a href="#!">О&#160;нас</a></li>
-							<li><a href="#!">Контакты</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
 		<main class="main">
 			<div class="container">
 				<h1 class="main__slogan">Найдите машину своей мечты</h1>
@@ -111,13 +83,3 @@
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
-			<div class="container">
-				<h2 class="footer__copyright">
-					&#169; АвтоМир
-				</h2>
-			</div>
-		</footer>
-		<script src="./js/index.bundle.js"></script>
-	</body>
-</html>
