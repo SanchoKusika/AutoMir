@@ -46,16 +46,17 @@ include(ROOT . "templates/header.tpl");
 	        <form class="order-form" id="globalOrderForm" action="order.php" method="POST">
 	            <div class="form-group">
 	                <label for="carSelect">Выберите автомобиль:</label>
-	                <select id="carSelect" name="car_id" class="form-select" required>
+					<select id="carSelect" class="form-select" required>
 					<option value="" disabled selected>Выберите модель</option>
-					<?php
-					$cars = R::findAll('cars');
-					foreach ($cars as $car):
-					?>
-					<option value="<?= $car->id ?>"><?= $car->brand . ' ' . $car->model ?></option>
+					<?php foreach ($cars as $car): ?>
+						<?php if ($car->quantity > 0): ?>
+							<option value="<?= $car->id ?>">
+								<?= $car->brand . ' ' . $car->model . ' (' . $car->year . ')' ?>
+							</option>
+						<?php endif; ?>
 					<?php endforeach; ?>
+					</select>
 
-	                </select>
 	            </div>
 
 	            <div class="form-group">
