@@ -48,7 +48,14 @@ include(ROOT . "templates/header.tpl");
 	            <div class="form-group">
 	                <label for="carSelect">Выберите автомобиль:</label>
 	                <select id="carSelect" name="car_id" class="form-select" required>
-	                    <option value="" disabled selected>Выберите модель</option>
+					<option value="" disabled selected>Выберите модель</option>
+					<?php
+					$cars = R::findAll('cars');
+					foreach ($cars as $car):
+					?>
+					<option value="<?= $car->id ?>"><?= $car->brand . ' ' . $car->model ?></option>
+					<?php endforeach; ?>
+
 	                </select>
 	            </div>
 
