@@ -7,6 +7,7 @@
 					<li><a href="#!">Католог</a></li>
 					<li><a href="#!">О&#160;нас</a></li>
 					<li><a href="#!">Контакты</a></li>
+					<li><a href="<?= HOST ?>admin.php">Админ</a></li>
 				</ul>
 			</nav>
 		</div>
