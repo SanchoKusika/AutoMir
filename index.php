@@ -46,7 +46,7 @@ include(ROOT . "templates/header.tpl");
 	        <form class="order-form" id="globalOrderForm" action="order.php" method="POST">
 	            <div class="form-group">
 	                <label for="carSelect">Выберите автомобиль:</label>
-					<select id="carSelect" class="form-select" required>
+					<select id="carSelect" name="car_id" class="form-select" required>
 					<option value="" disabled selected>Выберите модель</option>
 					<?php foreach ($cars as $car): ?>
 						<?php if ($car->quantity > 0): ?>
