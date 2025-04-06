@@ -81,6 +81,13 @@ include(ROOT . "templates/header.tpl");
 
 </main>
 
+<?php if (isset($_GET['order']) && $_GET['order'] === 'success'): ?>
+	<div class="popup-notification" id="orderSuccessPopup">
+		<span class="popup-close" onclick="closePopup()">&times;</span>
+		Заявка рассмотрена и принята!
+	</div>
+<?php endif; ?>
+
 <?php
 include(ROOT . "templates/footer.tpl");
 ?>
