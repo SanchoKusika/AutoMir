@@ -17,25 +17,27 @@ include(ROOT . "templates/header.tpl");
 			?>
 
 			<div class="cards__wrapper">
-			    <?php foreach ($cars as $car): ?>
-			        <div class="card">
-			            <img src="<?= HOST ?>assets/img/cars/<?= strtolower($car->brand) ?>.jpg" alt="<?= $car->brand ?>" class="card__img" />
-			            <div class="card__desc">
-			                <h2 class="card__title"><?= $car->model ?></h2>
-			                <h3 class="card__model"><?= strtoupper($car->brand) ?></h3>
-			                <h3 class="card__year"><?= $car->year ?></h3>
-			                <h2 class="card__price">$<?= number_format($car->price, 0, '.', ' ') ?></h2>
-			            </div>
-
-			            <?php if ($car->quantity > 0): ?>
-			                <a href="#order-form" class="form-link" data-car-id="<?= $car->id ?>"><?= "Оформить заявку" ?></a>
-			                <h2 class="status-available">Доступен</h2>
-			            <?php else: ?>
-			                <a class="form-link disabled" style="pointer-events: none; opacity: 0.5; cursor: not-allowed;"><?= "Оформить заявку" ?></a>
-			                <h2 class="status-unavailable">Продан</h2>
-			            <?php endif; ?>
-			        </div>
-			    <?php endforeach; ?>
+				<?php foreach ($cars as $car): ?>
+					<div class="card">
+						<?php 
+						$imageFile = strtolower($car->brand) . '_' . strtolower($car->model) . '.jpg';
+						?>
+						<img src="<?= HOST ?>assets/img/cars/<?= $imageFile ?>" alt="<?= $car->brand ?>" class="card__img" />
+						<div class="card__desc">
+							<h2 class="card__title"><?= $car->model ?></h2>
+							<h3 class="card__model"><?= strtoupper($car->brand) ?></h3>
+							<h3 class="card__year"><?= $car->year ?></h3>
+							<h2 class="card__price">$<?= number_format($car->price, 0, '.', ' ') ?></h2>
+						</div>
+						<?php if ($car->quantity > 0): ?>
+							<a href="#order-form" class="form-link" data-car-id="<?= $car->id ?>">Оформить заявку</a>
+							<h2 class="status-available">Доступен</h2>
+						<?php else: ?>
+							<a class="form-link disabled" style="pointer-events: none; opacity: 0.5; cursor: not-allowed;">Оформить заявку</a>
+							<h2 class="status-unavailable">Продан</h2>
+						<?php endif; ?>
+					</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>

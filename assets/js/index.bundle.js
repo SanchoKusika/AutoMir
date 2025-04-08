@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const form = document.getElementById("globalOrderForm");
+	const tabs = document.querySelectorAll(".tab-button");
+	const contents = document.querySelectorAll(".tab-content");
+
+	tabs.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			tabs.forEach((b) => b.classList.remove("active"));
+			btn.classList.add("active");
+
+			const target = btn.dataset.tab;
+			contents.forEach((c) => {
+				c.classList.remove("active");
+				if (c.id === target) c.classList.add("active");
+			});
+		});
+	});
 
 	form.addEventListener("submit", async function (e) {
 		e.preventDefault();
